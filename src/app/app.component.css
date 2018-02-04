@@ -1,0 +1,25 @@
+.form1
+{
+ font-color:black;
+
+ align-items: center;
+ margin-left: auto;
+ fxFlexAlign:center;
+ font-size: 80px;
+}
+.form
+{
+ background-size: 500%;
+ font-size: 20px;
+
+}
+.Footer
+{
+  margin-top: 300px;
+  font-color:black;
+  background-color: black;
+  align-items: center;
+  margin-left: auto;
+  fxFlexAlign:center;
+  font-size: 60px;
+}
