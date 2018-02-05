@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ChatService } from './chat.service';
 import * as io from 'socket.io-client';
+//import { AsyncLocalStorageModule } from 'angular-async-local-storage';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,7 +17,7 @@ export class AppComponent {
   set
   //selfAuthored: Boolean = false;
 
-  constructor(private chatService: ChatService) { let set = new Set()  }
+  constructor(private chatService: ChatService) {  }
 
   sendData() {
      this.chatService.sendMessage(this.model);
@@ -29,8 +30,10 @@ export class AppComponent {
        this.messages.push(data);
        //console.log(data.username);
        this.onlineuser.push(data.username);
+
        console.log(this.set);
       });
+
 
 
 

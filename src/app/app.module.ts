@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import {MatToolbarModule} from '@angular/material/toolbar';
+//import { AsyncLocalStorage } from 'angular-async-local-storage';
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    //AsyncLocalStorage,
    MatToolbarModule,
     BrowserModule,
     FormsModule,
