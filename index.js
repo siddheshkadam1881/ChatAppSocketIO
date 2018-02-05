@@ -1,6 +1,5 @@
 let express = require('express')
 let app = express();
-
 let http = require('http');
 let server = http.Server(app);
 var config = require("./config");
@@ -10,7 +9,6 @@ var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/chat');
 const port = process.env.PORT || 3000;
 var Chat=require('./model/Chat');
-
 
 //Socket server connection and testing
 io.on('connection', (socket) => {
@@ -32,6 +30,7 @@ io.on('connection', (socket) => {
         })
        });
  });
+
 
 server.listen(port, () => {
     console.log(`started on port: ${port}`);

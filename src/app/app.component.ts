@@ -12,18 +12,19 @@ export class AppComponent {
    onlineuser=[];
    data: string;
    Username: String;
-  users: Array<any>;
+  //users: Array<any>;
   model:any={};
-  set
+  showHide:Boolean;
   //selfAuthored: Boolean = false;
 
-  constructor(private chatService: ChatService) {  }
+  constructor(private chatService: ChatService) { this.showHide = false; }
 
   sendData() {
      this.chatService.sendMessage(this.model);
      //this.data = '';
    }
    ngOnInit() {
+     
     this.chatService
       .getMessages()
       .subscribe((data) => {
@@ -31,29 +32,10 @@ export class AppComponent {
        //console.log(data.username);
        this.onlineuser.push(data.username);
 
-       console.log(this.set);
       });
-
-
-
-
-    //   this.users = new Array();
-    //
-    //   this.chatService.on('get-users', (msg: any) => {
-    //   this.users.push(msg);
-    //   console.log(msg);
-    //   console.log(this.users);
-    // });
-
-
- //
- //  sendUser() {
- //   const user = {
- //     user: this.Username
- //   };
- //   this.chatService.emit('set-user', user);
- //   this.Username = '';
- // }
-
 }
+changeShowStatus(){
+this.showHide = !this.showHide;
+}
+
 }
