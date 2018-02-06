@@ -20,20 +20,26 @@ export class AppComponent {
   constructor(private chatService: ChatService) { this.showHide = false; }
 
   sendData() {
-     this.chatService.sendMessage(this.model);
-     //this.data = '';
+    // this.chatService.sendMessage(this.model);
+   this.chatService.sendMessage(this.model);
+   localStorage.setItem('loginSessId', this.model.username);
+   console.log(this.model.username);
    }
-   ngOnInit() {
-     
-    this.chatService
-      .getMessages()
-      .subscribe((data) => {
-       this.messages.push(data);
-       //console.log(data.username);
-       this.onlineuser.push(data.username);
-
+     ngOnInit() {
+     this.chatService
+     .getMessages()
+     .subscribe((data) => {
+     this.messages.push(data);
+     //console.log(data.username);
+     this.onlineuser.push(data.username);
       });
 }
+
+
+
+
+
+
 changeShowStatus(){
 this.showHide = !this.showHide;
 }

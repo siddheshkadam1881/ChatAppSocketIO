@@ -24,15 +24,14 @@
        <div align ="center" class="message"   *ngFor="let data of messages" >
            {{ data.username }}
              {{ data.message }}
-            {{ data.time }}
+            <!-- {{ data.time }} -->
        </div>
         <!-- //online user show here -->
-       <div  class="message"   *ngFor="let data of messages" >
-
+       <div  class="message1"   *ngFor="let data of messages" >
          <p> online user:   {{ data.username }} <p>
         </div>
        Usermessage:<input [(ngModel)]='model.message'  placeholder="message" name="message"  (keyup)="$event.keyCode == 13" ngModel/>
-       Time <input [(ngModel)]='model.time'  name="time" type="time" placeholder="Time" [value]="date" ng-model-options="{ timezone: '-0400' }">
+       <!-- Time <input [(ngModel)]='model.time'  name="time" type="time" placeholder="Time" [value]="date" ng-model-options="{ timezone: '-0400' }"> -->
        <!-- <input [(ngModel)]='model.time' type="datetime-local" [value]="date"
                  (change)="date=$event.target.value" name="time"  /> -->
        <button class="button1" type="submit" style="font-size: 15px">Send</button>

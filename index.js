@@ -16,18 +16,23 @@ io.on('connection', (socket) => {
 
    //send msg..
     socket.on('new-message', (message) => {
-//Communicating with other users..
+      //socket.on('user', (message) => {
+      //Communicating with other users..
+      var newmsg= Chat(message);
+      newmsg.save();
+      console.log(newmsg);
       console.log('msg at server',message);
           io.emit('new-message',message);
-          Chat.create({ username: String, message: String,time: String},function (err,success) {
-         if(err)
-          {
-               console.log(err);
-          }
-           else{
-               console.log('stored in database!');
-           }
-        })
+        //  io.emit('user',message[0]);
+        //   Chat.create({ username: String, message: String,time: String},function (err,success) {
+        //  if(err)
+        //   {
+        //        console.log(err);
+        //   }
+        //    else{
+        //        console.log('stored in database!');
+        //    }
+        // })
        });
  });
 

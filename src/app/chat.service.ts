@@ -24,34 +24,18 @@ export class ChatService {
        });
    }
 
+
+   public loginSessId(): any {
+          return JSON.parse(localStorage.getItem('loginSessId'));
+      }
+
+
+
+
    // getSignupData(path,model) {
    //      //console.log(model,path);
    //      this.urlpath= this.url.concat(path);
    //      return this.http.post(this.urlpath,model).map(res=>res.json());
    //      }
 
-
-
-
-
-   on(eventName: any, callback: any) {
-    if (this.socket) {
-      this.socket.on(eventName, function(data: any){
-        callback(data);
-      });
-    }
-  };
-
-  emit(eventName: any, data: any) {
-    if (this.socket) {
-      this.socket.emit(eventName, data);
-    }
-  };
-
-  removeListener(eventName: any) {
-    if (this.socket) {
-      this.socket.removeListener(eventName);
-    }
-
-}
 }
