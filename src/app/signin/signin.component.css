@@ -5,11 +5,6 @@ font-size: 20px;
 border: solid 0.1em silver;
 fxFlexAlign:center;
 }
-.message1
-{
-  padding-top: 40px;
-  padding-left: 330px;
-}
 
 .form1
 {
@@ -35,7 +30,6 @@ fxFlexAlign:center;
   height: 4em;
   font-size:20px;
   padding-left: 330px;
-
 }
 .title-center {
   margin: 0 auto;

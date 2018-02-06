@@ -23,19 +23,17 @@ export class ChatService {
            });
        });
    }
-
-
-   public loginSessId(): any {
-          return JSON.parse(localStorage.getItem('loginSessId'));
-      }
-
-
-
-
-   // getSignupData(path,model) {
-   //      //console.log(model,path);
-   //      this.urlpath= this.url.concat(path);
-   //      return this.http.post(this.urlpath,model).map(res=>res.json());
-   //      }
+   public getOnlineUsers = () => {
+     return Observable.create((observer) => {
+         this.socket.on('online-users', (data) => {
+          console.log(data);
+             observer.next(data);
+         });
+     });
+   }
+   public userLogin(data) {
+     console.log(data);
+     this.socket.emit('login', data);
+   }
 
 }
