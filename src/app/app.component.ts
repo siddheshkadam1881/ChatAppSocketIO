@@ -37,12 +37,13 @@ export class AppComponent {
       .subscribe((data) => {
         this.onlineuser=data;
       //  console.log(data);
-      //this.onlineuser.push(data.username);
+      //this.onlineuser.push(data);
     });
  }
  changeShowStatus(){
  this.showHide = !this.showHide;
  this.chatService.userLogin(this.model);
 }
+
 
 }

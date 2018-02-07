@@ -19,9 +19,9 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatMenuModule} from '@angular/material/menu';
 import {HttpClientModule} from '@angular/common/http';
 import { Http } from '@angular/http'
+//import {MatButtonModule} from '@angular/material/button';
 //import { AsyncLocalStorage } from 'angular-async-local-storage';
 // const routes: Routes = [
-//
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +30,8 @@ import { Http } from '@angular/http'
   ],
   imports: [
     //AsyncLocalStorage,
-   MatToolbarModule,
+    MatButtonModule,
+    MatToolbarModule,
     BrowserModule,
     FormsModule,
     HttpModule,
@@ -41,7 +42,6 @@ import { Http } from '@angular/http'
     MatIconModule,
     FormsModule,
     MatFormFieldModule,
-    MatButtonModule,
     MatToolbarModule,
     MatTabsModule,
     MatMenuModule,
